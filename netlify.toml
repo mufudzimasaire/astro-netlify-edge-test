@@ -5,3 +5,7 @@
 [[edge_functions]]
   path='/hello.json'
   function='hello-json'
+
+[[edge_functions]]
+  path='/products'
+  function='get-product-list'
