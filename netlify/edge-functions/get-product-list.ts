@@ -36,20 +36,15 @@ function transformProducts(products: ShiftProduct[]): Product[] {
   }, [])
 }
 
-/**
- * Products API Endpoint
- *
- * Purpose: Fetch first 25 products from the Platform API
- */
 export default async (_request: Request, context: Context) => {
   try {
-    const API_TENANT = Deno.env.get("API_TENANT")
-    const API_HOST = Deno.env.get("API_HOST")
-    const API_ACCESS_TOKEN = Deno.env.get("API_ACCESS_TOKEN")
+    const apiTenant = Deno.env.get("API_TENANT")
+    const apiHost = Deno.env.get("API_HOST")
+    const apiAccessToken = Deno.env.get("API_ACCESS_TOKEN")
 
-    const response = await fetch(`${API_HOST}/${API_TENANT}/v2/products?fields[products]=title,reference,canonical_path,public_primary_asset_file_url`, {
+    const response = await fetch(`${apiHost}/${apiTenant}/v2/products?fields[products]=title,reference,canonical_path,public_primary_asset_file_url`, {
       headers: {
-        "Authorization" : `Basic ${btoa(`${API_TENANT}:${API_ACCESS_TOKEN}`)}`,
+        "Authorization" : `Basic ${btoa(`${apiTenant}:${apiAccessToken}`)}`,
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
         'User-Agent': 'SHIFT Commerce Muf astro netlify edge demo',
