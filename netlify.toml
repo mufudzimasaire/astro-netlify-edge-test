@@ -9,3 +9,7 @@
 [[edge_functions]]
   path='/products'
   function='get-product-list'
+
+[[edge_functions]]
+  path='/'
+  function='ab-test'

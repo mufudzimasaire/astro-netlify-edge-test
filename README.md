@@ -8,6 +8,7 @@ Add SHIFT Platform API `API_ACCESS_TOKEN`, `API_HOST` and `API_TENANT` env vars 
 
 | Path | Edge Function |
 |--- |---|
-| /hello |/netlify/edge-functions/hello |
-| /hello.json | /netlify/edge-functions/hello-json |
-| /products | /netlify/edge-functions/get-product-list |
+| `/hello` |/netlify/edge-functions/hello |
+| `/hello.json` | /netlify/edge-functions/hello-json |
+| `/products.json` | /netlify/edge-functions/get-product-list |
+| `/` |/netlify/edge-functions/ab-test |
